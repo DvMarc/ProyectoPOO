@@ -1,4 +1,2 @@
-com\mycompany\proyectopoo\App.class
-com\mycompany\proyectopoo\SecondaryController.class
 module-info.class
-com\mycompany\proyectopoo\PrimaryController.class
+com\mycompany\proyectopoo\App.class

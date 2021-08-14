@@ -16,14 +16,20 @@ public class App extends Application {
     private static Scene scene;
 
     @Override
-    public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        public void start(Stage stage) throws IOException {
+        //creamos la vista
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("VistaPrincipal.fxml"));
+        Parent root = fxmlLoader.load();
+        //creamos la escena y le pasamos la vista
+        scene = new Scene(root, 640, 480);
+        //fijamos al vista la stage
         stage.setScene(scene);
+        //mostramos el stage
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
+    public static void setRoot(Parent root) {
+        scene.setRoot(root);
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
