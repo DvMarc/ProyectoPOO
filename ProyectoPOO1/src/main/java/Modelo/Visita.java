@@ -11,8 +11,12 @@ import java.time.LocalDateTime;
  *
  * @author USUARIO
  */
-public class Visita {
+public class Visita extends Visitante {
     private String codigo;
     private LocalDateTime Finicio;
+
+    public Visita(String cedula, String nombre, String correo) {
+        super(cedula, nombre, correo);
+    }
     
 }
