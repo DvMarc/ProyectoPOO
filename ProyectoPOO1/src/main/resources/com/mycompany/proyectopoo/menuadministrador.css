@@ -2,6 +2,8 @@
  * Empty Stylesheet file.
  */
 
-.mainFxmlClass {
-
+#panelMapa{
+    -fx-background-image: url('fondo.jpg');
+    -fx-background-size: 700 600;
+    -fx-background-position: center center;
 }
