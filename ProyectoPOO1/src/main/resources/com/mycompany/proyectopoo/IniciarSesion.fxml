@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="40.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectopoo.IniciarSesionController">
    <children>
       <Label text="Iniciar Sesión" />
@@ -25,11 +24,11 @@
         </rowConstraints>
          <children>
             <Button fx:id="bCancelar" contentDisplay="CENTER" mnemonicParsing="false" text="Cancelar" GridPane.rowIndex="2" />
-            <Button fx:id="bIniciarSesion" mnemonicParsing="false" text="Iniciar Sesión" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="bIniciarSesion" mnemonicParsing="false" onMouseClicked="#iniciarSesion" text="Iniciar Sesión" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Contraseña:" GridPane.rowIndex="1" />
             <Label text="Usuario:" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" />
+            <TextField fx:id="lcontra" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="lUsername" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </children>

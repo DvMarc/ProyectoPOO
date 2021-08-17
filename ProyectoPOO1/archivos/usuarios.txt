@@ -1,0 +1,2 @@
+admin,admin
+david,romdmarc@espol.edu.ec,1234,1,dvmarc,soyyo

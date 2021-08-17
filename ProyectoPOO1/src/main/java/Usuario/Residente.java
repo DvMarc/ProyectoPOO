@@ -16,17 +16,17 @@ public class Residente extends Usuario{
     
     private String nombreResidente;
     private String correo;
-    private Casa casa;
+    private String casa;
     private String pin;
     private ArrayList<Vehiculo> vehiculos;
     private ArrayList<Visitante> visitantes;
     
     
     public Residente(String nombreResidente, String correo, String pin, 
-            Casa casa, String user, String contrasenia){
+            String casa, String user, String contrasenia){
         super(user, contrasenia);
-        this.casa=casa;
         this.correo=correo;
+        this.casa=casa;
         this.nombreResidente=nombreResidente;
         this.pin=pin;
         vehiculos = new ArrayList<>();

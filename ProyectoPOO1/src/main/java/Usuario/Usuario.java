@@ -17,4 +17,21 @@ public class Usuario {
         this.user=user;
         this.contrasenia=contrasenia;
     }
+
+    public String getUser() {
+        return user;
+    }
+
+    public String getContrasenia() {
+        return contrasenia;
+    }
+    
+    public boolean equals(Object obj ){
+      if(obj!=null&& obj instanceof Usuario){
+          Usuario u = (Usuario)obj;
+          if(u.user.equals(user)&&u.contrasenia.equals(contrasenia)){
+              return true;
+          }
+      } return false;  
+    }
 }

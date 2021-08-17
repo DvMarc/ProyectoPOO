@@ -3,10 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="40.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectopoo.VistaPrincipalController">
    <children>
-      <Button fx:id="bIniciarSesion" mnemonicParsing="false" text="Iniciar sesión" />
+      <Button fx:id="bIniciarSesion" mnemonicParsing="false" onMouseClicked="#iniciarSesion" text="Iniciar sesión" />
       <Button fx:id="bSimulacion" mnemonicParsing="false" text="Simulación" />
    </children>
 </VBox>
