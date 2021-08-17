@@ -41,6 +41,19 @@ public class VistaPrincipalController implements Initializable {
             System.out.println("");   
         }
     }
+    public void simulacion(MouseEvent e){
+        try{
+        FXMLLoader loader = new FXMLLoader(App.class.getResource("VistaSimulacion.fxml"));
+        Parent viewPrincipal = loader.load();
+        App.setRoot(viewPrincipal);
+        VistaPrincipalController principalController = loader.getController();
+        }catch(IOException ex){
+            System.out.println("No se ha podido cargar la vista");
+            System.out.println("VistaPrincipal.fxml");
+        }catch(RuntimeException ex){
+            System.out.println("");   
+        }
+    }
     
     /**
      * Initializes the controller class.

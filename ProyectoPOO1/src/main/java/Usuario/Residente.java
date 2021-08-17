@@ -22,8 +22,8 @@ public class Residente extends Usuario{
     private ArrayList<Visitante> visitantes;
     
     
-    public Residente(String nombreResidente, String correo, String pin, 
-            String casa, String user, String contrasenia){
+    public Residente(String user, String contrasenia, String nombreResidente, String correo, String pin, 
+            String casa){
         super(user, contrasenia);
         this.correo=correo;
         this.casa=casa;

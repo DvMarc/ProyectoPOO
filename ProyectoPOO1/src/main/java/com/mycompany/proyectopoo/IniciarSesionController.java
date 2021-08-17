@@ -53,7 +53,6 @@ public class IniciarSesionController implements Initializable {
             System.out.println("VistaPrincipal.fxml");
         }
     }
-    
     public void iniciarSesion(MouseEvent e){
         String ruta = "archivos/usuarios.txt";
         Charset charset = Charset.forName("UTF-8");
@@ -78,38 +77,27 @@ public class IniciarSesionController implements Initializable {
                     for (String s:partes){
                         contador+=1;
                     }
-                    if(contador==2){
-                        String user = partes[0];
-                        String contra = partes[1];
-                        Usuario a1 = new Usuario(user,contra);
-                        if(a.equals(a1)){
-                            FXMLLoader loader = new FXMLLoader(App.class.getResource("MenuAdministrador.fxml"));
-                            Parent viewPrincipal = loader.load();
-                            App.setRoot(viewPrincipal);
-                            VistaPrincipalController principalController = loader.getController();
-                        }else{
-                            Alert alert = new Alert(Alert.AlertType.ERROR, "Usuario o contraeña invalidos");
-                            alert.showAndWait()
-                            .filter(response -> response == ButtonType.OK)
-                            .ifPresent(response -> formatSystem());
+                    System.out.println(contador);
+                    String user = partes[0];
+                    String contra = partes[1];
+                    Usuario a1 = new Usuario(user,contra);
+                    if(a1.equals(a)){
+                        switch(contador){
+                            case 2: System.out.println("Es admin");
+                                    FXMLLoader loader = new FXMLLoader(App.class.getResource("MenuAdministrador.fxml"));
+                                    Parent viewPrincipal = loader.load();
+                                    App.setRoot(viewPrincipal);
+                                    VistaPrincipalController principalController = loader.getController();
+                                break;
+                            case 6: System.out.println("Es residente");
+                                    FXMLLoader loader1 = new FXMLLoader(App.class.getResource("vistaResidente.fxml"));
+                                    Parent viewPrincipal1 = loader1.load();
+                                    App.setRoot(viewPrincipal1);
+                                    VistaPrincipalController principalController1 = loader1.getController();
+                                break;
                         }
-                    }else{
-                        String user = partes[4];
-                        String contra = partes[5];
-                        Usuario a2 = new Usuario(user,contra);
-                        if(a2.equals(a)){
-                            FXMLLoader loader = new FXMLLoader(App.class.getResource("vistaResidente.fxml"));
-                            Parent viewPrincipal = loader.load();
-                            App.setRoot(viewPrincipal);
-                            VistaPrincipalController principalController = loader.getController();
-                        }else{
-                            Alert alert = new Alert(Alert.AlertType.ERROR, "Usuario o contraeña invalidos");
-                            alert.showAndWait()
-                            .filter(response -> response == ButtonType.OK)
-                            .ifPresent(response -> formatSystem());
-                        }
-                        
-                    }
+                    } 
+                    contador = 0;
                 }
             }
         }catch (IOException ex) {
