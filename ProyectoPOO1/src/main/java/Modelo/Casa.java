@@ -14,11 +14,13 @@ public class Casa {
     private String manzana;
     private String villa;
     private String propietario;
+    private String imagePath;
 
-    public Casa(Coordenada coordenadas, String manzana, String villa) {
+    public Casa(Coordenada coordenadas, String manzana, String villa, String imagePath) {
         this.coordenadas = coordenadas;
         this.manzana = manzana;
         this.villa = villa;
+        this.imagePath = imagePath;
         propietario = "";
     }
 
@@ -36,6 +38,10 @@ public class Casa {
 
     public String getPropietario() {
         return propietario;
+    }
+
+    public String getImagePath() {
+        return imagePath;
     }
 
     

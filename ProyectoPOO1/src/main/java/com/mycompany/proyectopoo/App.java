@@ -21,7 +21,7 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("VistaPrincipal.fxml"));
         Parent root = fxmlLoader.load();
         //creamos la escena y le pasamos la vista
-        scene = new Scene(root, 640, 480);
+        scene = new Scene(root, 700, 450);
         //fijamos al vista la stage
         stage.setScene(scene);
         //mostramos el stage
