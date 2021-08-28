@@ -118,24 +118,32 @@ public class IniciarSesionController implements Initializable {
                     if(u.equals(user)){
                         if(u instanceof Administrador){
                             System.out.println("Es admin");
+                            try{
                                     FXMLLoader loader = new FXMLLoader(App.class.getResource("MenuAdministrador.fxml"));
                                     Parent viewPrincipal = loader.load();
                                     App.setRoot(viewPrincipal);
                                     MenuAdministradorController adminController = loader.getController();
+                            }catch(IOException ex){
+                            System.out.println("No se ha podido cargar la vista");
+                            System.out.println("MenuAdministrador.fxml");
+                        }
                         }else if(u instanceof Residente){
                             System.out.println("Es residente");
-                                    FXMLLoader loader1 = new FXMLLoader(App.class.getResource("vistaResidente.fxml"));
+                            try{
+                                    FXMLLoader loader1 = new FXMLLoader(App.class.getResource("VistaResidente.fxml"));
                                     Parent viewPrincipal1 = loader1.load();
                                     App.setRoot(viewPrincipal1);
                                     VistaResidenteController residentController1 = loader1.getController();
+                            }catch(IOException ex){
+                            System.out.println("No se ha podido cargar la vista");
+                            System.out.println("VistaResidente.fxml");
+                        }
                         }
                     }
                 }
             }
         }catch(ClassNotFoundException e1){
             System.out.println("Clase incompatible");
-        }catch(IOException e2){
-            System.out.println("Error clase no serializada");
         }
     }
     

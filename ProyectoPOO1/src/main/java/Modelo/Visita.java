@@ -5,18 +5,20 @@
  */
 package Modelo;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
  *
  * @author USUARIO
  */
-public class Visita extends Visitante {
+public class Visita implements Serializable{
     private String codigo;
     private LocalDateTime Finicio;
 
-    public Visita(String cedula, String nombre, String correo) {
-        super(cedula, nombre, correo);
+    public Visita(String codigo, LocalDateTime Finicio) {
+        this.codigo = codigo;
+        this.Finicio = Finicio;
     }
     
 }

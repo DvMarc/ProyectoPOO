@@ -32,16 +32,18 @@ public class UsuariosData {
 
 
     public static ArrayList<Usuario>leerUsuarios() 
-        throws IOException, ClassNotFoundException{
+        throws ClassNotFoundException{
         ArrayList<Usuario> usuarios = null;
         try(ObjectInputStream objInputStream 
                 = new ObjectInputStream(new FileInputStream(ruta))) {
           usuarios = (ArrayList<Usuario>)objInputStream.readObject();
+        }catch(IOException e2){
+            System.out.println("Error clase no serializada");
         }
         return usuarios;
     }
     
-     public static void main(String[] args) throws IOException{
+     public static void main(String[] args){
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         usuarios.add(new Administrador("admin","admin"));
         usuarios.add(new Residente("dvmarc","soyyo","david","romdmarc@espol.edu.ec","1234","1","Masculino"));

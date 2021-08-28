@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author ALICE
  */
-public class Residente extends Usuario implements Serializable{
+public class Residente extends Usuario{
     
     private String nombreResidente;
     private String correo;

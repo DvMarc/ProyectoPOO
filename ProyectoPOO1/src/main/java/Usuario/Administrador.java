@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author EVELYN
  */
-public class Administrador extends Usuario implements Serializable{
+public class Administrador extends Usuario{
     
     public Administrador(String user, String contrasenia) {
         super(user, contrasenia);

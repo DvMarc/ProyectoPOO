@@ -5,13 +5,14 @@
  */
 package Modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author USUARIO
  */
-public class Visitante {
+public class Visitante implements Serializable{
     
     private ArrayList<Visita> visitas;
     private String cedula;
