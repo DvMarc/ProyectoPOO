@@ -1,4 +1,4 @@
-111,20,3,1,casa11.png
-551,20,3,1,casa1.png
-621,280,3,1,casa3.png
-41,280,3,1,casa2.png
+111,20,6,1,casa11.png
+551,20,5,2,casa1.png
+621,280,3,3,casa3.png
+41,280,1,4,casa2.png

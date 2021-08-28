@@ -5,11 +5,13 @@
  */
 package Modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author EVELYN
  */
-public class Casa {
+public class Casa implements Serializable {
     private Coordenada coordenadas;
     private String manzana;
     private String villa;
@@ -42,6 +44,11 @@ public class Casa {
 
     public String getImagePath() {
         return imagePath;
+    }
+
+    @Override
+    public String toString() {
+        return "Casa{" + "coordenadas=" + coordenadas + ", manzana=" + manzana + ", villa=" + villa + ", propietario=" + propietario + ", imagePath=" + imagePath + '}';
     }
 
     

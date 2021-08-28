@@ -5,11 +5,13 @@
  */
 package Usuario;
 
+import java.io.Serializable;
+
 /**
  *
  * @author EVELYN
  */
-public class Administrador extends Usuario{
+public class Administrador extends Usuario implements Serializable{
     
     public Administrador(String user, String contrasenia) {
         super(user, contrasenia);

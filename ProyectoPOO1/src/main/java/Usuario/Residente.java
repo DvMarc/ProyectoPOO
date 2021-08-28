@@ -6,29 +6,32 @@
 package Usuario;
 
 import Modelo.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author ALICE
  */
-public class Residente extends Usuario{
+public class Residente extends Usuario implements Serializable{
     
     private String nombreResidente;
     private String correo;
     private String casa;
     private String pin;
+    private String genero;
     private ArrayList<Vehiculo> vehiculos;
     private ArrayList<Visitante> visitantes;
     
     
     public Residente(String user, String contrasenia, String nombreResidente, String correo, String pin, 
-            String casa){
+            String casa, String genero){
         super(user, contrasenia);
         this.correo=correo;
         this.casa=casa;
         this.nombreResidente=nombreResidente;
         this.pin=pin;
+        this.genero=genero;
         vehiculos = new ArrayList<>();
         visitantes = new ArrayList<>();
     }
