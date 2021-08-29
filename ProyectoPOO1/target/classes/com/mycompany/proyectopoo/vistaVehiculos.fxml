@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.proyectopoo.VistaVehiculosController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0" spacing="20.0">
+         <children>
+            <Label prefHeight="19.0" prefWidth="514.0" text="Mis Vehículos">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label id="vehiculosRegistrados" fx:id="vehiculosRegistrados" text="Sin vehiculos registrados">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="30.0" />
+               </VBox.margin>
+            </Label>
+            <Label prefHeight="19.0" prefWidth="512.0" text="Registrar Vehículo">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+            <HBox prefHeight="25.0" prefWidth="490.0">
+               <children>
+                  <Label text="Matrícula :" />
+                  <TextField id="nuevaMatricula" fx:id="nuevaMatricula">
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </HBox>
+            <Button id="registrarVehiculo" fx:id="registrarVehiculo" mnemonicParsing="false" text="Registrar">
+               <VBox.margin>
+                  <Insets left="30.0" />
+               </VBox.margin>
+            </Button>
+            <Label id="error" fx:id="error" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="276.0" textAlignment="CENTER" textFill="#405bcf">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </padding>
+      </VBox>
+   </children>
+</Pane>

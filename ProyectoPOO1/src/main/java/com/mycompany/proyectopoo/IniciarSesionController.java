@@ -130,7 +130,7 @@ public class IniciarSesionController implements Initializable {
                         }else if(u instanceof Residente){
                             System.out.println("Es residente");
                             try{
-                                    FXMLLoader loader1 = new FXMLLoader(App.class.getResource("VistaResidente.fxml"));
+                                    FXMLLoader loader1 = new FXMLLoader(App.class.getResource("vistaResidente.fxml"));
                                     Parent viewPrincipal1 = loader1.load();
                                     App.setRoot(viewPrincipal1);
                                     VistaResidenteController residentController1 = loader1.getController();
