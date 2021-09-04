@@ -14,6 +14,8 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,6 +24,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TitledPane;
 import javafx.scene.control.Tooltip;
@@ -42,6 +45,14 @@ public class MenuAdministradorController implements Initializable {
     
     @FXML
     private Pane panelMapa;
+    @FXML
+    private MenuItem cerrarsesion;
+    @FXML
+    private MenuItem mapaCiudadela;
+    @FXML
+    private MenuItem rp1;
+    @FXML
+    private MenuItem rp2;
 
     
     private static class Position {
@@ -115,14 +126,72 @@ public class MenuAdministradorController implements Initializable {
                     }
                   );
                   arrastrarYmover(imgview, c);
-                  
-                  
             }
+            cerrarsesion.setOnAction(new EventHandler<ActionEvent>(){
+                public void handle(ActionEvent t){
+                    try{
+                    FXMLLoader loader = new FXMLLoader(App.class.getResource("IniciarSesion.fxml"));
+                    Parent viewPrincipal = loader.load();
+                    App.setRoot(viewPrincipal);
+                    VistaPrincipalController principalController = loader.getController();
+                    }catch(IOException ex){
+                        System.out.println("No se ha podido cargar la vista");
+                        System.out.println("IniciarSesion.fxml");
+                    }catch(RuntimeException ex){
+                        System.out.println("");   
+                    }
+                }
+            });
+            mapaCiudadela.setOnAction(new EventHandler<ActionEvent>(){
+                public void handle(ActionEvent t){
+                    try{
+                        FXMLLoader loader = new FXMLLoader(App.class.getResource("MenuAdministrador.fxml"));
+                        Parent viewPrincipal = loader.load();
+                        App.setRoot(viewPrincipal);
+                        MenuAdministradorController adminController = loader.getController();
+                    }catch(IOException ex){
+                        System.out.println("No se ha podido cargar la vista");
+                        System.out.println("MenuAdministrador.fxml");
+                    }catch(RuntimeException ex){
+                        System.out.println("");   
+                    }
+                }
+            });
+            rp1.setOnAction(new EventHandler<ActionEvent>(){
+                public void handle(ActionEvent t){
+                    try{
+                        FXMLLoader loader = new FXMLLoader(App.class.getResource("Reporte1.fxml"));
+                        Parent viewPrincipal = loader.load();
+                        App.setRoot(viewPrincipal);
+                        Reporte1Controller adminController = loader.getController();
+                    }catch(IOException ex){
+                        System.out.println("No se ha podido cargar la vista");
+                        System.out.println("Reporte1.fxml");
+                    }catch(RuntimeException ex){
+                        System.out.println("");   
+                    }
+                }
+            });
+            rp2.setOnAction(new EventHandler<ActionEvent>(){
+                public void handle(ActionEvent t){
+                    try{
+                        FXMLLoader loader = new FXMLLoader(App.class.getResource("Reporte2.fxml"));
+                        Parent viewPrincipal = loader.load();
+                        App.setRoot(viewPrincipal);
+                        Reporte2Controller adminController = loader.getController();
+                    }catch(IOException ex){
+                        System.out.println("No se ha podido cargar la vista");
+                        System.out.println("Reporte2.fxml");
+                    }catch(RuntimeException ex){
+                        System.out.println("");   
+                    }
+                }
+            });
         }catch(ClassNotFoundException e){
             System.out.println("Clase incompatible");
         }catch(IOException e1){
             System.out.println("Error clase no serializada");
         }
     }
-    
+   
 }
