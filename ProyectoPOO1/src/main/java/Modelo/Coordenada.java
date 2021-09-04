@@ -5,11 +5,13 @@
  */
 package Modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author EVELYN
  */
-public class Coordenada {
+public class Coordenada implements Serializable {
     private int coordenadaX;
     private int coordenadaY;
 
@@ -24,6 +26,11 @@ public class Coordenada {
 
     public int getCoordenadaY() {
         return coordenadaY;
+    }
+
+    @Override
+    public String toString() {
+        return "Coordenada{" + "coordenadaX=" + coordenadaX + ", coordenadaY=" + coordenadaY + '}';
     }
     
 }

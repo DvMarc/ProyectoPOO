@@ -5,11 +5,13 @@
  */
 package Usuario;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ALICE
  */
-public class Usuario {
+public class Usuario implements Serializable{
     private String user;
     private String contrasenia;
     
@@ -34,4 +36,11 @@ public class Usuario {
           }
       } return false;  
     }
+
+    @Override
+    public String toString() {
+        return "Su usuario es: "+user+"\nSu contraseña es: "+contrasenia;
+    }
+    
+    
 }

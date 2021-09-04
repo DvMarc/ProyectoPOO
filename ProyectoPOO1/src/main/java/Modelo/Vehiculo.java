@@ -5,11 +5,13 @@
  */
 package Modelo;
 
+import java.io.Serializable;
+
 /**
  *
  * @author ALICE
  */
-public class Vehiculo {
+public class Vehiculo implements Serializable{
 
     private String matricula;
     private String nombrePropietario;
@@ -21,6 +23,9 @@ public class Vehiculo {
 
     public String getMatricula() {
         return matricula;
+    }
+    public String getNombre(){
+        return nombrePropietario;
     }
 }
 

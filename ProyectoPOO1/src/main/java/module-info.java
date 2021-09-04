@@ -5,4 +5,5 @@ module com.mycompany.proyectopoo {
 
     opens com.mycompany.proyectopoo to javafx.fxml;
     exports com.mycompany.proyectopoo;
+    requires java.mail;
 }

@@ -22,8 +22,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -32,7 +30,7 @@ import javafx.scene.input.MouseEvent;
  * @author EVELYN
  */
 public class IniciarSesionController implements Initializable {
-
+    ArrayList<Usuario> usuarios = null;
     @FXML
     private Button bCancelar;
     @FXML
@@ -54,7 +52,7 @@ public class IniciarSesionController implements Initializable {
         }
     }
     public void iniciarSesion(MouseEvent e){
-        String ruta = "archivos/usuarios.txt";
+        /*String ruta = "archivos/usuarios.txt";
         Charset charset = Charset.forName("UTF-8");
         try(
              BufferedReader reader = 
@@ -87,13 +85,13 @@ public class IniciarSesionController implements Initializable {
                                     FXMLLoader loader = new FXMLLoader(App.class.getResource("MenuAdministrador.fxml"));
                                     Parent viewPrincipal = loader.load();
                                     App.setRoot(viewPrincipal);
-                                    VistaPrincipalController principalController = loader.getController();
+                                    MenuAdministradorController adminController = loader.getController();
                                 break;
                             case 6: System.out.println("Es residente");
                                     FXMLLoader loader1 = new FXMLLoader(App.class.getResource("vistaResidente.fxml"));
                                     Parent viewPrincipal1 = loader1.load();
                                     App.setRoot(viewPrincipal1);
-                                    VistaPrincipalController principalController1 = loader1.getController();
+                                    VistaResidenteController residentController1 = loader1.getController();
                                 break;
                         }
                     } 
@@ -104,6 +102,50 @@ public class IniciarSesionController implements Initializable {
             ex.printStackTrace();
         }catch(RuntimeException ex){
             System.out.println("");   
+        }*/
+        try{
+            usuarios=UsuariosData.leerUsuarios();
+            String username = lUsername.getText();
+            String contrasenia = lcontra.getText();
+            if (username.isEmpty() | contrasenia.isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.ERROR, "Usuario o contraeña no pueden estar en blanco");
+                alert.showAndWait()
+                .filter(response -> response == ButtonType.OK)
+                .ifPresent(response -> formatSystem());
+            }else{
+                Usuario user = new Usuario(username,contrasenia);
+                for(Usuario u:usuarios){
+                    if(u.equals(user)){
+                        if(u instanceof Administrador){
+                            System.out.println("Es admin");
+                            try{
+                                    FXMLLoader loader = new FXMLLoader(App.class.getResource("MenuAdministrador.fxml"));
+                                    Parent viewPrincipal = loader.load();
+                                    App.setRoot(viewPrincipal);
+                                    MenuAdministradorController adminController = loader.getController();
+                            }catch(IOException ex){
+                            System.out.println("No se ha podido cargar la vista");
+                            System.out.println("MenuAdministrador.fxml");
+                        }
+                        }else if(u instanceof Residente){
+                            System.out.println("Es residente");
+                            Residente r = (Residente)u;
+                            try{
+                                    FXMLLoader loader1 = new FXMLLoader(App.class.getResource("vistaResidente.fxml"));
+                                    Parent viewPrincipal1 = loader1.load();
+                                    App.setRoot(viewPrincipal1);
+                                    VistaResidenteController residentController1 = loader1.getController();
+                                    residentController1.setUsuario(r);
+                            }catch(IOException ex){
+                            System.out.println("No se ha podido cargar la vista");
+                            System.out.println("VistaResidente.fxml");
+                        }
+                        }
+                    }
+                }
+            }
+        }catch(ClassNotFoundException e1){
+            System.out.println("Clase incompatible");
         }
     }
     

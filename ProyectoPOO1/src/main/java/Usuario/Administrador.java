@@ -5,6 +5,8 @@
  */
 package Usuario;
 
+import java.io.Serializable;
+
 /**
  *
  * @author EVELYN
