@@ -88,11 +88,9 @@ public class VistaResidenteController implements Initializable {
         });
     } 
     
-    public void setUsuario(Usuario user){
-      if(user instanceof Residente){
-          residente = (Residente) user;
-      }
-        
+    public void setUsuario(Residente user){
+      residente = user;
+
     }
     
     
