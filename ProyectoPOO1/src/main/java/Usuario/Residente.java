@@ -13,71 +13,59 @@ import java.util.ArrayList;
  *
  * @author ALICE
  */
-public class Residente extends Usuario{
+public class Residente extends Usuario implements Serializable{
     
     private String nombreResidente;
     private String correo;
-    private String casa;
+    private String mz;
+    private String villa;
     private String pin;
     private String genero;
     private ArrayList<Vehiculo> vehiculos;
     private ArrayList<Visitante> visitantes;
+    private ArrayList<Visita> visitas;
     
     
     public Residente(String user, String contrasenia, String nombreResidente, String correo, String pin, 
-            String casa, String genero){
+            String genero){
         super(user, contrasenia);
         this.correo=correo;
-        this.casa=casa;
         this.nombreResidente=nombreResidente;
         this.pin=pin;
         this.genero=genero;
         vehiculos = new ArrayList<>();
         visitantes = new ArrayList<>();
+        visitas = new ArrayList<>();
     }
-
-    public String getNombreResidente() {
+    public String getNombre(){
         return nombreResidente;
     }
-
-    public String getCorreo() {
+    public String getCorreo(){
         return correo;
     }
-
-    public String getCasa() {
-        return casa;
-    }
-
-    public String getPin() {
+    public String getPin(){
         return pin;
     }
-
-    public String getGenero() {
-        return genero;
+    @Override
+    public String getUser(){
+        return super.getUser();
     }
-
-    public ArrayList<Vehiculo> getVehiculos() {
-        return vehiculos;
-    }
-
-    public ArrayList<Visitante> getVisitantes() {
-        return visitantes;
-    }
-    
     public void setPin(String pin){
         this.pin=pin;
     }
-    public void registrarVehiculo(){
-        
+    public void registrarVehiculo(String matricula){
+        Vehiculo vehiculo = new Vehiculo(matricula, nombreResidente);
+        vehiculos.add(vehiculo);
+        VehiculosData.agregarVehiculo(nombreResidente, matricula);
     }
-    public void registrarVisitante(){
-        
+    public ArrayList<Vehiculo> getVehiculos(){
+        return vehiculos;
     }
-
-    @Override
-    public String toString() {
-        return  super.toString()+"\nSu casa es: " + casa + "\nSu pin es: "+pin;
+    public void registrarVisitante(Visitante visitante){
+        visitantes.add(visitante);
     }
-    
-    
+    public void registrarVisita(Visita visita){
+        visitas.add(visita);
+    }
 }
+

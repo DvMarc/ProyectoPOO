@@ -72,6 +72,6 @@ public class Casa implements Serializable {
     public String toString() {
         return "Casa{" + "coordenadas=" + coordenadas + ", manzana=" + manzana + ", villa=" + villa + ", propietario=" + propietario + ", imagePath=" + imagePath + '}';
     }
-
+    
     
 }

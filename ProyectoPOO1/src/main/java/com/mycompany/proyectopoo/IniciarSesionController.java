@@ -134,6 +134,7 @@ public class IniciarSesionController implements Initializable {
                                     Parent viewPrincipal1 = loader1.load();
                                     App.setRoot(viewPrincipal1);
                                     VistaResidenteController residentController1 = loader1.getController();
+                                    residentController1.setUsuario(user);
                             }catch(IOException ex){
                             System.out.println("No se ha podido cargar la vista");
                             System.out.println("VistaResidente.fxml");

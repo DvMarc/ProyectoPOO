@@ -5,6 +5,8 @@
  */
 package com.mycompany.proyectopoo;
 
+import Usuario.Residente;
+import Usuario.Usuario;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+
 
 /**
  * FXML Controller class
@@ -34,34 +37,63 @@ public class VistaResidenteController implements Initializable {
     private Button btnVehiculos;
     @FXML
     private ImageView logo;
-
+    
+    private Residente residente;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
+                  
         verInformacion.setOnMouseClicked((MouseEvent event)->{
             event.consume();
-            cargarOpcion("vistaInformacion.fxml");
+            try{
+                FXMLLoader loader = new FXMLLoader(App.class.getResource("VistaInformacion.fxml"));
+                Parent root = loader.load();
+                panePrincipal.setCenter(root);
+                VistaInformacionController vistaInfo = loader.getController();
+                vistaInfo.setResidente(residente);
+                
+            } catch (IOException ex) {
+                System.out.println("No se pudo cargar VistaInformacion.fxml");
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
         });
         btnVisitantes.setOnMouseClicked((MouseEvent event)->{
             event.consume();
-            cargarOpcion("vistaVisitante.fxml");
+            try{
+                FXMLLoader loader = new FXMLLoader(App.class.getResource("vistaVisitante.fxml"));
+                Parent root = loader.load();
+                panePrincipal.setCenter(root);
+                VistaVisitanteController vistaVisit = loader.getController();
+                vistaVisit.setResidente(residente);
+            } catch (IOException ex) {
+                System.out.println("No se pudo cargar vistaVisitantes.fxml");
+            }
         });
         btnVehiculos.setOnMouseClicked((MouseEvent event)->{
-           cargarOpcion("vistaVehiculos.fxml"); 
+           try{
+                FXMLLoader loader = new FXMLLoader(App.class.getResource("vistaVehiculos.fxml"));
+                Parent root = loader.load();
+                panePrincipal.setCenter(root);
+                VistaVehiculosController vistaVehiculos = loader.getController();
+                vistaVehiculos.setResidente(residente);
+            } catch (IOException ex) {
+                System.out.println("No se pudo cargar vistaVehiculos.fxml");
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
         });
-    }    
-    public void cargarOpcion(String vista){
-        Parent root = null;
-        try{
-            root = FXMLLoader.load(getClass().getResource(vista));
-        }catch(IOException ex){
-            
-        }
-        panePrincipal.setCenter(root);
+    } 
+    
+    public void setUsuario(Usuario user){
+      if(user instanceof Residente){
+          residente = (Residente) user;
+      }
+        
     }
-     
+    
     
 }

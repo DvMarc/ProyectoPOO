@@ -24,5 +24,8 @@ public class Vehiculo implements Serializable{
     public String getMatricula() {
         return matricula;
     }
+    public String getNombre(){
+        return nombrePropietario;
+    }
 }
 
