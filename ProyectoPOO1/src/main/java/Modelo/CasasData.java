@@ -42,7 +42,7 @@ public class CasasData {
     
     public static void main(String[] args) throws IOException{
         ArrayList<Casa> casas = new ArrayList<Casa>();
-        casas.add(new Casa(new Coordenada(111,20),"6","1","casa11.png"));
+        casas.add(new Casa(new Coordenada(111,20),"6","1","dvmarc","casa11.png"));
         casas.add(new Casa(new Coordenada(551,20),"5","2","casa1.png"));
         casas.add(new Casa(new Coordenada(621,280),"3","3","casa3.png"));
         casas.add(new Casa(new Coordenada(41,280),"1","4","casa2.png"));

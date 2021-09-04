@@ -17,6 +17,15 @@ public class Casa implements Serializable {
     private String villa;
     private String propietario;
     private String imagePath;
+    private boolean controlador;
+
+    public Casa(Coordenada coordenadas, String manzana, String villa, String propietario, String imagePath) {
+        this.coordenadas = coordenadas;
+        this.manzana = manzana;
+        this.villa = villa;
+        this.propietario = propietario;
+        this.imagePath = imagePath;
+    }
 
     public Casa(Coordenada coordenadas, String manzana, String villa, String imagePath) {
         this.coordenadas = coordenadas;
@@ -24,6 +33,7 @@ public class Casa implements Serializable {
         this.villa = villa;
         this.imagePath = imagePath;
         propietario = "";
+        controlador = false;
     }
 
     public Coordenada getCoordenadas() {
@@ -44,6 +54,18 @@ public class Casa implements Serializable {
 
     public String getImagePath() {
         return imagePath;
+    }
+
+    public boolean getControlador() {
+        return controlador;
+    }
+
+    public void setControlador(boolean controlador) {
+        this.controlador = controlador;
+    }
+
+    public void setPropietario(String propietario) {
+        this.propietario = propietario;
     }
 
     @Override

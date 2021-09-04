@@ -35,6 +35,34 @@ public class Residente extends Usuario{
         vehiculos = new ArrayList<>();
         visitantes = new ArrayList<>();
     }
+
+    public String getNombreResidente() {
+        return nombreResidente;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public String getCasa() {
+        return casa;
+    }
+
+    public String getPin() {
+        return pin;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public ArrayList<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
+
+    public ArrayList<Visitante> getVisitantes() {
+        return visitantes;
+    }
     
     public void setPin(String pin){
         this.pin=pin;
@@ -45,4 +73,11 @@ public class Residente extends Usuario{
     public void registrarVisitante(){
         
     }
+
+    @Override
+    public String toString() {
+        return  super.toString()+"\nSu casa es: " + casa + "\nSu pin es: "+pin;
+    }
+    
+    
 }

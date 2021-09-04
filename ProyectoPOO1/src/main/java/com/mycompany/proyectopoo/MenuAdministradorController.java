@@ -52,7 +52,7 @@ public class MenuAdministradorController implements Initializable {
      * Initializes the controller class.
      */
     
-    private void arrastrarYmover(Node node){
+    private void arrastrarYmover(Node node, Casa c){
         final Position pos = new Position();
     
         node.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> node.setCursor(Cursor.HAND));
@@ -60,7 +60,7 @@ public class MenuAdministradorController implements Initializable {
 
         node.addEventHandler(MouseEvent.MOUSE_PRESSED, event -> {
                 node.setCursor(Cursor.MOVE);
-
+                event.consume();
                 pos.x = event.getX();
                 pos.y = event.getY();
         });
@@ -72,8 +72,8 @@ public class MenuAdministradorController implements Initializable {
 
             double x = node.getLayoutX() + distanceX;
             double y = node.getLayoutY() + distanceY;
-
             node.relocate(x, y);
+            event.consume();
                  });
     }
     
@@ -98,6 +98,8 @@ public class MenuAdministradorController implements Initializable {
                   );
                 
                   imgview.setOnMouseClicked((MouseEvent ev) -> {
+                      System.out.println("en onmouseclicked");
+                      System.out.println(c.getControlador());
                       if (c.getPropietario().isEmpty()) {
                         try{
                           FXMLLoader loader = new FXMLLoader(App.class.getResource("Registro.fxml"));
@@ -112,7 +114,7 @@ public class MenuAdministradorController implements Initializable {
                       }
                     }
                   );
-                  arrastrarYmover(imgview);
+                  arrastrarYmover(imgview, c);
                   
                   
             }

@@ -36,4 +36,11 @@ public class Usuario implements Serializable{
           }
       } return false;  
     }
+
+    @Override
+    public String toString() {
+        return "Su usuario es: "+user+"\nSu contraseña es: "+contrasenia;
+    }
+    
+    
 }
