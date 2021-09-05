@@ -1,28 +1,29 @@
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Correo.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\Administrador.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\DataVisitas.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\UsuariosData.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\Usuario.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaInformacionController.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Visita.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\RegistroController.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\CasasData.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\IniciarSesionController.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\Reporte1Controller.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Visitante.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaPrincipalController.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\module-info.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaVehiculosController.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaVisitanteController.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Sistema.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\VehiculosData.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\App.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\Reporte2Controller.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\RegistrarVisita.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaSimulacionController.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\Residente.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Coordenada.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\MenuAdministradorController.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Casa.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Vehiculo.java
-C:\Users\EVELYN\Desktop\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaResidenteController.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\CasasData.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Visita.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\module-info.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\Administrador.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\RegistrarVisita.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\Residente.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaVehiculosController.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaPrincipalController.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Casa.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\VehiculosData.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\UsuariosData.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Correo.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaInformacionController.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\DataVisitas.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\IniciarSesionController.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Coordenada.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaSimulacionController.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\MenuAdministradorController.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaVisitanteController.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\Reporte2Controller.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Sistema.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\App.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Visitante.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\Usuario.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\VisitasResidenteData.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\Reporte1Controller.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaResidenteController.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\RegistroController.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Vehiculo.java
