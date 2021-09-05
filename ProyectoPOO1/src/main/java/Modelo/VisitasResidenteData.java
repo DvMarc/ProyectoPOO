@@ -3,51 +3,46 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Usuario;
+package Modelo;
 
-import Modelo.Casa;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
- * @author EVELYN
+ * @author ALICE
  */
-public class UsuariosData {
-    static String ruta = "archivos/usuarios.dat";
+public class VisitasResidenteData implements Serializable{
+    static String ruta = "archivos/vehiculos.dat";
+    private static ArrayList<Visitante> visitas;
     
-    public static void escribirUsuario(ArrayList<Usuario> usuarios){
+    public static void escribirVisitas(ArrayList<Visitante> visitas){
         try (ObjectOutputStream objOutputStream =
             new ObjectOutputStream(new FileOutputStream(ruta))){
-            objOutputStream.writeObject(usuarios);
-            System.out.println("Se esta reescribiendo el archivo usuarios");
+            objOutputStream.writeObject(visitas);
         }catch(IOException ex){
             ex.getMessage();
         }
     }
-
-
-    public static ArrayList<Usuario>leerUsuarios() 
+    public static ArrayList<Visitante> leerVisitas() 
         throws ClassNotFoundException{
-        ArrayList<Usuario> usuarios = null;
         try(ObjectInputStream objInputStream 
                 = new ObjectInputStream(new FileInputStream(ruta))) {
-          usuarios = (ArrayList<Usuario>)objInputStream.readObject();
+          visitas = (ArrayList<Visitante>)objInputStream.readObject();
         }catch(IOException e2){
             System.out.println("Error clase no serializada");
         }
-        return usuarios;
+        return visitas;
     }
-    
-     public static void main(String[] args){
-        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
-        usuarios.add(new Administrador("admin","admin"));
-        usuarios.add(new Residente("dvmarc","soyyo","david","romdmarc@espol.edu.ec","1234","6","1","Masculino"));
-        escribirUsuario(usuarios);
+    public static void agregarVisita(Visitante visitante){
+        visitas.add(visitante);
     }
-
+    public static void main(String args[]){
+        
+    }
 }

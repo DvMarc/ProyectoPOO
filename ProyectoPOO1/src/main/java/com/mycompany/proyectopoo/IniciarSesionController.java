@@ -52,57 +52,6 @@ public class IniciarSesionController implements Initializable {
         }
     }
     public void iniciarSesion(MouseEvent e){
-        /*String ruta = "archivos/usuarios.txt";
-        Charset charset = Charset.forName("UTF-8");
-        try(
-             BufferedReader reader = 
-                    new BufferedReader(new FileReader(ruta, charset)) 
-            ){
-            String username = lUsername.getText();
-            String contrasenia = lcontra.getText();
-            if (username.isEmpty() | contrasenia.isEmpty()){
-                Alert alert = new Alert(Alert.AlertType.ERROR, "Usuario o contraeña no pueden estar en blanco");
-                alert.showAndWait()
-                .filter(response -> response == ButtonType.OK)
-                .ifPresent(response -> formatSystem());
-            }else{
-                Usuario a = new Usuario(username,contrasenia);
-                String line = null;
-                while ((line = reader.readLine()) != null) {
-                    System.out.println(line);
-                    String[] partes = line.split(",");
-                    int contador = 0;
-                    for (String s:partes){
-                        contador+=1;
-                    }
-                    System.out.println(contador);
-                    String user = partes[0];
-                    String contra = partes[1];
-                    Usuario a1 = new Usuario(user,contra);
-                    if(a1.equals(a)){
-                        switch(contador){
-                            case 2: System.out.println("Es admin");
-                                    FXMLLoader loader = new FXMLLoader(App.class.getResource("MenuAdministrador.fxml"));
-                                    Parent viewPrincipal = loader.load();
-                                    App.setRoot(viewPrincipal);
-                                    MenuAdministradorController adminController = loader.getController();
-                                break;
-                            case 6: System.out.println("Es residente");
-                                    FXMLLoader loader1 = new FXMLLoader(App.class.getResource("vistaResidente.fxml"));
-                                    Parent viewPrincipal1 = loader1.load();
-                                    App.setRoot(viewPrincipal1);
-                                    VistaResidenteController residentController1 = loader1.getController();
-                                break;
-                        }
-                    } 
-                    contador = 0;
-                }
-            }
-        }catch (IOException ex) {
-            ex.printStackTrace();
-        }catch(RuntimeException ex){
-            System.out.println("");   
-        }*/
         try{
             usuarios=UsuariosData.leerUsuarios();
             String username = lUsername.getText();
@@ -131,11 +80,11 @@ public class IniciarSesionController implements Initializable {
                             System.out.println("Es residente");
                             Residente r = (Residente)u;
                             try{
-                                    FXMLLoader loader1 = new FXMLLoader(App.class.getResource("vistaResidente.fxml"));
-                                    Parent viewPrincipal1 = loader1.load();
-                                    App.setRoot(viewPrincipal1);
-                                    VistaResidenteController residentController1 = loader1.getController();
-                                    residentController1.setUsuario(r);
+                                FXMLLoader loader1 = new FXMLLoader(App.class.getResource("vistaResidente.fxml"));
+                                Parent viewPrincipal1 = loader1.load();
+                                App.setRoot(viewPrincipal1);
+                                VistaResidenteController residentController1 = loader1.getController();
+                                residentController1.setUsuario(r);
                             }catch(IOException ex){
                             System.out.println("No se ha podido cargar la vista");
                             System.out.println("VistaResidente.fxml");

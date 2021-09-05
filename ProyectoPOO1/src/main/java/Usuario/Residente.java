@@ -24,7 +24,20 @@ public class Residente extends Usuario implements Serializable{
     private ArrayList<Vehiculo> vehiculos;
     private ArrayList<Visitante> visitantes;
     private ArrayList<Visita> visitas;
-    
+
+    public Residente(String user, String contrasenia, String nombreResidente, String correo, String pin,String mz, String villa, 
+            String genero) {
+        super(user, contrasenia);
+        this.nombreResidente = nombreResidente;
+        this.correo = correo;
+        this.mz = mz;
+        this.villa = villa;
+        this.pin = pin;
+        this.genero = genero;
+        vehiculos = new ArrayList<>();
+        visitantes = new ArrayList<>();
+        visitas = new ArrayList<>();
+    }
     
     public Residente(String user, String contrasenia, String nombreResidente, String correo, String pin, 
             String genero){

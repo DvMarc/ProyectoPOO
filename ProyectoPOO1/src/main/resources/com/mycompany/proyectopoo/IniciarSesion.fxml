@@ -23,7 +23,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="bCancelar" contentDisplay="CENTER" mnemonicParsing="false" text="Cancelar" GridPane.rowIndex="2" />
+            <Button fx:id="bCancelar" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#cancelarBoton" text="Cancelar" GridPane.rowIndex="2" />
             <Button fx:id="bIniciarSesion" mnemonicParsing="false" onMouseClicked="#iniciarSesion" text="Iniciar Sesión" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Contraseña:" GridPane.rowIndex="1" />
             <Label text="Usuario:" />
