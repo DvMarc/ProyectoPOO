@@ -7,23 +7,21 @@ package com.mycompany.proyectopoo;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
  *
- * @author EVELYN
+ * @author USUARIO
  */
-public class VistaSimulacionController implements Initializable {
-    
+public class Simulacion_residentesController implements Initializable {
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        // TODO
     }    
     
 }
