@@ -18,7 +18,7 @@ public class App extends Application {
     @Override
         public void start(Stage stage) throws IOException {
         //creamos la vista
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("vistaPrincipal.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("VistaPrincipal.fxml"));
         Parent root = fxmlLoader.load();
         //creamos la escena y le pasamos la vista
         scene = new Scene(root, 700, 450);

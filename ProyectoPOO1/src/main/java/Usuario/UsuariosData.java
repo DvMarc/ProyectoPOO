@@ -46,7 +46,7 @@ public class UsuariosData {
      public static void main(String[] args){
         ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
         usuarios.add(new Administrador("admin","admin"));
-        usuarios.add(new Residente("dvmarc","soyyo","david","romdmarc@espol.edu.ec","1234","1","Masculino"));
+        usuarios.add(new Residente("dvmarc","soyyo","david","romdmarc@espol.edu.ec","1234","6","1","Masculino"));
         escribirUsuario(usuarios);
     }
 

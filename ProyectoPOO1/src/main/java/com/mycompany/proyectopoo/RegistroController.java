@@ -126,7 +126,7 @@ public class RegistroController implements Initializable {
             pin=generarPin();
             condicionPin = comprobarPin(pin);
         }
-        Residente r = new Residente(username,username,nombre,correo,pin,casa.getVilla(),genero);
+        Residente r = new Residente(username,username,nombre,correo,pin,casa.getManzana(),casa.getVilla(),genero);
         usuarios.add(r);
         UsuariosData.escribirUsuario(usuarios);
         System.out.println(username);
