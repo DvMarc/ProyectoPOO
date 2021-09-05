@@ -6,6 +6,8 @@
 package Modelo;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
@@ -18,19 +20,38 @@ public class Visitante implements Serializable{
     private String cedula;
     private String nombre;
     private String correo;
+    private LocalDateTime fechaIngreso;
+    private String codigoAcceso;
+    private String residente;
+    
    
     public Visitante(String cedula,String nombre,String correo){
         this.cedula=cedula;
         this.nombre=nombre;
         this.correo= correo;
-        visitas = new ArrayList<>();
+    }
+    public Visitante(String residente, String cedula,String nombre,String correo,LocalDateTime
+            fecha, String codigo){
+        this(cedula, nombre, correo);
+        this.residente = residente;
+        codigoAcceso = codigo;
+        fechaIngreso = fecha;
     }
     
     public String getCedula() {
         return cedula;
     }
-    
     public String getNombre() {
         return nombre;
+    }
+    public String getCodigo(){
+        return codigoAcceso;
+    }
+    public String getFecha(){
+        LocalDate fecha = fechaIngreso.toLocalDate();
+        return fecha.toString();
+    }
+    public String getUsuario(){
+        return residente;
     }
 }

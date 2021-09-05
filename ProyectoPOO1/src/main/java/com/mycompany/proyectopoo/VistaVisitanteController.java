@@ -5,17 +5,21 @@
  */
 package com.mycompany.proyectopoo;
 
+import Modelo.Correo;
 import Modelo.Sistema;
 import Modelo.Visita;
 import Modelo.Visitante;
+import Modelo.VisitasResidenteData;
 import Usuario.Residente;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -25,6 +29,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 /**
  * FXML Controller class
  *
@@ -49,8 +54,11 @@ public class VistaVisitanteController implements Initializable {
     private ComboBox<String> minIngreso;
     @FXML
     private Label error;
+    @FXML
+    private GridPane gridVisitas;
     
     private Residente residente;
+    
    /**
      * Initializes the controller class.
      */
@@ -63,13 +71,18 @@ public class VistaVisitanteController implements Initializable {
         String[] minutos = {"00","05","10","15","20","25","30","35","40","45","50","55"};
         minIngreso.setItems(FXCollections.observableArrayList(horas));
         horaIngreso.setItems(FXCollections.observableArrayList(minutos));
+        try {
+            actualizarTabla();
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
     }    
     public void setResidente(Residente user){
         residente = user;
     }
 
     @FXML
-    private void registrarVisitante(MouseEvent event) {
+    private void registrarVisitante(MouseEvent event) throws ClassNotFoundException {
         String cedula = ciVisitante.getText();
         String correo = correoVisitante.getText();
         String nombre = nombreVisitante.getText();
@@ -78,20 +91,65 @@ public class VistaVisitanteController implements Initializable {
         LocalDate diaIngreso = fechaIngreso.getValue();
         LocalDateTime diaHora = diaIngreso.atTime(Integer.parseInt(hora), 
                 Integer.parseInt(min));
-        if(cedula.isEmpty()|nombre.isEmpty()|hora==null|min==null|diaIngreso==null){
+        if(cedula.isEmpty()||nombre.isEmpty()||hora==null||min==null||diaIngreso==null){
             error.setText("Campos no pueden estar vacios");
         }else if(Sistema.validarCorreo(correo)==false){
             error.setText("Correo invalido");
-        }else if(Sistema.validarFecha()==false){
+        }else if(Sistema.validarFecha(diaHora)==false){
             error.setText("Fecha no puede ser pasada");
 
         }else{
             error.setText("");
-            Visitante visitante = new Visitante(cedula, nombre, correo);
-            Visita visita = new Visita(Sistema.generarCodigo(),diaHora);
+            Visitante visitante = new Visitante(residente.getUser(),cedula, nombre, correo,
+                    diaHora, Sistema.generarCodigo());
             residente.registrarVisitante(visitante);
-            residente.registrarVisita(visita);
+            
+            Correo.enviarConGmail(correo, "Codigo de Acceso", "");
+            
+            actualizarTabla();
+            
         }
+    }
+    private void actualizarTabla() throws ClassNotFoundException{
+        ArrayList<Visitante> visitantes = VisitasResidenteData.leerVisitas();
+        if(visitantes!=null){
+           int row=1;
+            for(Visitante vt:visitantes){
+                if(vt.getUsuario().equals(residente.getUser())){
+                    Label nombre=new Label(vt.getNombre());
+                    Label ci = new Label(vt.getCedula());
+                    Label code=new Label(vt.getCodigo());
+                    Label fecha = new Label(vt.getFecha());
+                    gridVisitas.add(nombre,0,row);
+                    gridVisitas.add(ci, 1, row);
+                    gridVisitas.add(code,2,row);
+                    gridVisitas.add(fecha, 3, row);
+                    row++;
+                }
+            }
+        }
+        
+    }
+    public void addGridEvent() {
+        gridVisitas.getChildren().forEach(item -> {
+            item.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                
+                public void handle(MouseEvent event) {
+                    if (event.getClickCount() == 1) {
+                        ;
+                    }
+                    if (event.isPrimaryButtonDown()) {
+                        System.out.println("PrimaryKey event");
+                    }
+
+                }
+            });
+
+        });
+    }
+
+    @FXML
+    private void eliminar(MouseEvent event) {
     }
     
 }

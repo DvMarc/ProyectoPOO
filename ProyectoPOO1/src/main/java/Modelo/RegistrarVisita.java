@@ -32,8 +32,7 @@ public class RegistrarVisita implements Serializable{
     public String getTipo() {
         return tipo;
     }
-    
-    
+
     public static boolean filtroFechas(LocalDateTime inicio, LocalDateTime fin, LocalDateTime buscar){
         return buscar.isAfter(inicio) && buscar.isBefore(fin);
     }

@@ -59,7 +59,7 @@ public class VistaVehiculosController implements Initializable {
         String nombre = residente.getNombre();
         String str= "";
         
-        if(vehiculosRegistrados!=null | !vehiculosRegistrados.isEmpty()|nombre!=null){
+        if(vehiculosRegistrados!=null || !vehiculosRegistrados.isEmpty()||nombre!=null){
             for(Vehiculo v : vehiculosRegistrados){
                 if(v.getNombre().equals(nombre)){
                     str = str + v.getMatricula()+" - ";
@@ -76,13 +76,14 @@ public class VistaVehiculosController implements Initializable {
     }
 
     @FXML
-    private void registrarVehiculo(MouseEvent event) {
+    private void registrarVehiculo(MouseEvent event) throws ClassNotFoundException {
         String matricula = nuevaMatricula.getText();
         if(matricula.isEmpty()){
             error.setText("Matricula no puede ser vacia");
         }else{
             matricula = matricula.toLowerCase();
             residente.registrarVehiculo(matricula);
+            vehiculosRegistrados();
         }
     }
 }
