@@ -94,6 +94,8 @@ public class VistaResidenteController implements Initializable {
                 vistaVisit.setResidente(residente);
             } catch (IOException ex) {
                 System.out.println("No se pudo cargar vistaVisitantes.fxml");
+            } catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
             }
         });
         btnVehiculos.setOnMouseClicked((MouseEvent event)->{

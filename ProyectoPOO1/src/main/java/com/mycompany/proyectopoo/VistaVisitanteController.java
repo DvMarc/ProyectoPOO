@@ -66,11 +66,11 @@ public class VistaVisitanteController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        String[] horas = {"1","2","3","4","5","6","7","8","9","10","11","12",
+        String[] horas = {"01","02","03","04","05","06","07","08","09","10","11","12",
             "13","14","15","16","17","18","19","20","21","22","23","00"};
         String[] minutos = {"00","05","10","15","20","25","30","35","40","45","50","55"};
-        minIngreso.setItems(FXCollections.observableArrayList(horas));
-        horaIngreso.setItems(FXCollections.observableArrayList(minutos));     
+        horaIngreso.setItems(FXCollections.observableArrayList(horas));
+        minIngreso.setItems(FXCollections.observableArrayList(minutos));
     }    
     
     public void setResidente(Residente user) throws ClassNotFoundException{
@@ -86,28 +86,39 @@ public class VistaVisitanteController implements Initializable {
         String hora = horaIngreso.getValue();
         String min = minIngreso.getValue();
         LocalDate diaIngreso = fechaIngreso.getValue();
-        LocalDateTime diaHora = diaIngreso.atTime(Integer.parseInt(hora), 
-                Integer.parseInt(min));
+        
+        LocalDateTime diaHora=null;
         try{
+            int err = 0;
             if(cedula.isEmpty()||nombre.isEmpty()
                     ||correo.isEmpty()||hora==null||min==null){
-                error.setText("Campos no estan vacios");
-            }else if(Sistema.validarCorreo(correo)==false){
-                error.setText("Correo invalido");
-            }else if(Sistema.validarFecha(diaHora)==false){
-                error.setText("Fecha no puede ser pasada");
-            }else{
+                error.setText("Campos no pueden estar vacios");
+                err++;
+            }if(Sistema.validarCorreo(correo)==false){
+                    error.setText("Correo invalido");
+                    err++;
+                
+            }
+            if(hora!=null||min!=null){
+                diaHora = diaIngreso.atTime(Integer.parseInt(hora), 
+                Integer.parseInt(min));
+                if(Sistema.validarFecha(diaHora)==false){
+                    error.setText("Fecha no puede ser pasada");
+                    err++;
+                }
+            }if(err==0){
                 error.setText("");
                 Visitante visitante = new Visitante(residente.getUser(),cedula, nombre, correo,
-                        diaHora, Sistema.generarCodigo());
-                if(visitante == null){
+                        diaHora, Sistema.generarCodigo(),"activo");
+                
                     VisitasResidenteData.agregarVisita(visitante);
+                    error.setText("se creo visitante");
                     actualizarTabla();
-                }  
+                
             }
         }catch(NullPointerException ex){
             error.setText("Campos no pueden estar vacios");
-        } 
+        }
     }
     
     private void actualizarTabla() throws ClassNotFoundException{
@@ -128,24 +139,6 @@ public class VistaVisitanteController implements Initializable {
                 }
             }
         }  
-    }
-    
-    @FXML
-    private void eliminar(MouseEvent event) {
-        
-    }
-    public void addGridEvent() {
-        gridVisitas.getChildren().forEach(item -> {
-            item.setOnMouseClicked((MouseEvent event) -> {
-                if (event.getClickCount() == 1) {
-                    
-                }
-                if (event.isPrimaryButtonDown()) {
-                    
-                }
-            });
-
-        });
     }
 }
 

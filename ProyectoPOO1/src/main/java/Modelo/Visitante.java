@@ -23,6 +23,7 @@ public class Visitante implements Serializable{
     private LocalDateTime fechaIngreso;
     private String codigoAcceso;
     private String residente;
+    private String estado;
     
    
     public Visitante(String cedula,String nombre,String correo){
@@ -31,11 +32,12 @@ public class Visitante implements Serializable{
         this.correo= correo;
     }
     public Visitante(String residente, String cedula,String nombre,String correo,LocalDateTime
-            fecha, String codigo){
+            fecha, String codigo, String estado){
         this(cedula, nombre, correo);
         this.residente = residente;
         codigoAcceso = codigo;
         fechaIngreso = fecha;
+        this.estado = estado;
     }
     
     public String getCedula() {

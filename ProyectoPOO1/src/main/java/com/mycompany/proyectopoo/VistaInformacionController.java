@@ -71,18 +71,22 @@ public class VistaInformacionController implements Initializable {
         pinActual.setText(residente.getPin());
         mz.setText(residente.getMz());
         villa.setText(residente.getVilla());
+        
     }
 
     @FXML
-    private void cambiarPin(MouseEvent event) {
+    private void cambiarPin(MouseEvent event) throws IOException, ClassNotFoundException {
         String newPin = txtPin.getText();
-        if(newPin.isEmpty() | newPin.length()!=4){
+        if(newPin.isEmpty() || newPin.length()!=4){
             error.setText("Pin invalido");
             if(Sistema.validarPin(newPin)==false){
                 error.setText("Pin debe contener solo digitos");
             }
         }else{
+            error.setText("");
             residente.setPin(newPin);
+            actualizarInformacion();
+            throw new IOException("No se pudo actualizar informacion");
         }
     }
     
