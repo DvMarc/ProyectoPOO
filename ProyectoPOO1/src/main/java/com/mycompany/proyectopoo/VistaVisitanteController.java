@@ -108,11 +108,17 @@ public class VistaVisitanteController implements Initializable {
                 }
             }if(err==0){
                 error.setText("");
+                String codigoAcceso = Sistema.generarCodigo();
                 Visitante visitante = new Visitante(residente.getUser(),cedula, nombre, correo,
-                        diaHora, Sistema.generarCodigo(),"activo");
+                        diaHora, codigoAcceso,"activo");
                 
                     VisitasResidenteData.agregarVisita(visitante);
-                    error.setText("se creo visitante");
+                    error.setText("Se creo visitante");
+                    
+                    Correo.enviarConGmail(correo, "Codigo de acceso a Ciudadela",
+                            "Codigo de acceso: "+codigoAcceso+"\nDia: "+diaIngreso+
+                                    hora+":"+min);
+                    
                     actualizarTabla();
                 
             }
