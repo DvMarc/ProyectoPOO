@@ -27,7 +27,7 @@ public class Sistema {
     }
     public static boolean validarFecha(LocalDateTime fechaIngreso){
         LocalDateTime fechaActual= LocalDateTime.now();
-        return fechaActual.isAfter(fechaIngreso);
+        return !fechaActual.isAfter(fechaIngreso);
     }
 
     public static boolean validarPin(String pin){

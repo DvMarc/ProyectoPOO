@@ -18,7 +18,8 @@ import java.util.ArrayList;
  * @author ALICE
  */
 public class VisitasResidenteData implements Serializable{
-    static String ruta = "archivos/vehiculos.dat";
+    static String ruta = "archivos/visitaResidente.dat";
+    
     private static ArrayList<Visitante> visitas;
     
     public static void escribirVisitas(ArrayList<Visitante> visitas){
@@ -41,8 +42,11 @@ public class VisitasResidenteData implements Serializable{
     }
     public static void agregarVisita(Visitante visitante){
         visitas.add(visitante);
+        escribirVisitas(visitas);
     }
     public static void main(String args[]){
-        
+        ArrayList<Visitante> visitas = new ArrayList<>();
+        escribirVisitas(visitas);
     }
 }
+
