@@ -59,6 +59,12 @@ public class Residente extends Usuario implements Serializable{
     public String getPin(){
         return pin;
     }
+    public String getMz(){
+        return mz;
+    }
+    public String getVilla(){
+        return villa;
+    }
     @Override
     public String getUser(){
         return super.getUser();

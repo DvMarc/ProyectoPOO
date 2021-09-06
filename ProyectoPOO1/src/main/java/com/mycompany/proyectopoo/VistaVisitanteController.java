@@ -70,17 +70,14 @@ public class VistaVisitanteController implements Initializable {
             "13","14","15","16","17","18","19","20","21","22","23","00"};
         String[] minutos = {"00","05","10","15","20","25","30","35","40","45","50","55"};
         minIngreso.setItems(FXCollections.observableArrayList(horas));
-        horaIngreso.setItems(FXCollections.observableArrayList(minutos));
-        try {
-            actualizarTabla();
-        } catch (ClassNotFoundException ex) {
-            ex.printStackTrace();
-        }
+        horaIngreso.setItems(FXCollections.observableArrayList(minutos));     
     }    
-    public void setResidente(Residente user){
+    
+    public void setResidente(Residente user) throws ClassNotFoundException{
         residente = user;
+        actualizarTabla();
     }
-
+    
     @FXML
     private void registrarVisitante(MouseEvent event) throws ClassNotFoundException {
         String cedula = ciVisitante.getText();
@@ -91,25 +88,28 @@ public class VistaVisitanteController implements Initializable {
         LocalDate diaIngreso = fechaIngreso.getValue();
         LocalDateTime diaHora = diaIngreso.atTime(Integer.parseInt(hora), 
                 Integer.parseInt(min));
-        if(cedula.isEmpty()||nombre.isEmpty()||hora==null||min==null||diaIngreso==null){
+        try{
+            if(cedula.isEmpty()||nombre.isEmpty()
+                    ||correo.isEmpty()||hora==null||min==null){
+                error.setText("Campos no estan vacios");
+            }else if(Sistema.validarCorreo(correo)==false){
+                error.setText("Correo invalido");
+            }else if(Sistema.validarFecha(diaHora)==false){
+                error.setText("Fecha no puede ser pasada");
+            }else{
+                error.setText("");
+                Visitante visitante = new Visitante(residente.getUser(),cedula, nombre, correo,
+                        diaHora, Sistema.generarCodigo());
+                if(visitante == null){
+                    VisitasResidenteData.agregarVisita(visitante);
+                    actualizarTabla();
+                }  
+            }
+        }catch(NullPointerException ex){
             error.setText("Campos no pueden estar vacios");
-        }else if(Sistema.validarCorreo(correo)==false){
-            error.setText("Correo invalido");
-        }else if(Sistema.validarFecha(diaHora)==false){
-            error.setText("Fecha no puede ser pasada");
-
-        }else{
-            error.setText("");
-            Visitante visitante = new Visitante(residente.getUser(),cedula, nombre, correo,
-                    diaHora, Sistema.generarCodigo());
-            residente.registrarVisitante(visitante);
-            
-            Correo.enviarConGmail(correo, "Codigo de Acceso", "");
-            
-            actualizarTabla();
-            
-        }
+        } 
     }
+    
     private void actualizarTabla() throws ClassNotFoundException{
         ArrayList<Visitante> visitantes = VisitasResidenteData.leerVisitas();
         if(visitantes!=null){
@@ -127,29 +127,27 @@ public class VistaVisitanteController implements Initializable {
                     row++;
                 }
             }
-        }
+        }  
+    }
+    
+    @FXML
+    private void eliminar(MouseEvent event) {
         
     }
     public void addGridEvent() {
         gridVisitas.getChildren().forEach(item -> {
-            item.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                
-                public void handle(MouseEvent event) {
-                    if (event.getClickCount() == 1) {
-                        ;
-                    }
-                    if (event.isPrimaryButtonDown()) {
-                        System.out.println("PrimaryKey event");
-                    }
-
+            item.setOnMouseClicked((MouseEvent event) -> {
+                if (event.getClickCount() == 1) {
+                    
+                }
+                if (event.isPrimaryButtonDown()) {
+                    
                 }
             });
 
         });
     }
-
-    @FXML
-    private void eliminar(MouseEvent event) {
-    }
-    
 }
+
+    
+

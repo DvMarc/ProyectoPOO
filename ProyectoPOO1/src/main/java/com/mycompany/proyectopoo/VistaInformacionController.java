@@ -69,20 +69,8 @@ public class VistaInformacionController implements Initializable {
         nombreResidente.setText(residente.getNombre());
         correoResidente.setText(residente.getCorreo());
         pinActual.setText(residente.getPin());
-        
-        try{
-            ArrayList<Casa> casas = new ArrayList<>();
-            casas = CasasData.leerCasas();
-            for(Casa c : casas){
-                if(c.getPropietario().equals(residente.getUser())){
-                    villa.setText(c.getVilla());
-                    mz.setText(c.getManzana());
-                }
-            }
-        }catch(IOException ex){
-            
-        }
-        
+        mz.setText(residente.getMz());
+        villa.setText(residente.getVilla());
     }
 
     @FXML
