@@ -1,7 +1,10 @@
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaCodigoAccesoController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\CasasData.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Visita.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\module-info.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistasSinCodigoAccesoController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\Administrador.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaAccesoDenegadoController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\RegistrarVisita.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\Residente.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaVehiculosController.java
@@ -11,12 +14,14 @@ C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\VehiculosData.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\UsuariosData.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Correo.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaAccesoConcedidoController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaInformacionController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\DataVisitas.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\IniciarSesionController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Coordenada.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaSimulacionController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\MenuAdministradorController.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaSimulacionVisitanteController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaVisitanteController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\Reporte2Controller.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Sistema.java
@@ -24,7 +29,9 @@ C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Visitante.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Usuario\Usuario.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\VisitasResidenteData.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaIngresoPeatonController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\Reporte1Controller.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaResidenteController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\RegistroController.java
 C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\Modelo\Vehiculo.java
+C:\Users\USUARIO\Desktop\PROYECTO POO 2P\ProyectoPOO\ProyectoPOO1\src\main\java\com\mycompany\proyectopoo\VistaSimuIngresoVehiculoController.java

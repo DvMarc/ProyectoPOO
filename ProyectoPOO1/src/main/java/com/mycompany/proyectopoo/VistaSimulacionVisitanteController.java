@@ -5,7 +5,6 @@
  */
 package com.mycompany.proyectopoo;
 
-import Usuario.Residente;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,49 +15,48 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 
 /**
  * FXML Controller class
  *
  * @author USUARIO
  */
-public class Simulacion_residentesController implements Initializable {
+public class VistaSimulacionVisitanteController implements Initializable {
 
     @FXML
-    private Button butonPeaton;
+    private Button ButtonConCodigo;
     @FXML
-    private Button butonVehiculo;
+    private Button ButtonSinCodigo;
     @FXML
     private BorderPane panePrincipal;
-    @FXML
-    private Residente residente;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        butonVehiculo.setOnMouseClicked((MouseEvent event)->{
+        ButtonConCodigo.setOnMouseClicked((MouseEvent event)->{
             event.consume();
+
             try{
-                FXMLLoader loader = new FXMLLoader(App.class.getResource("VistaSimuIngresoVehiculo.fxml"));
+                FXMLLoader loader = new FXMLLoader(App.class.getResource("VistaCodigoAcceso.fxml"));
                 Parent root = loader.load();
                 panePrincipal.setCenter(root);
-                VistaSimuIngresoVehiculoController vistaVehi = loader.getController();
+                VistaCodigoAccesoController vistaConCodi = loader.getController();
 
+                
             } catch (IOException ex) {
                 System.out.println("No se pudo cargar VistaInformacion.fxml");
-            }
+            } 
         });
-        butonPeaton.setOnMouseClicked((MouseEvent event)->{
+        ButtonSinCodigo.setOnMouseClicked((MouseEvent event)->{
             event.consume();
 
             try{
-                FXMLLoader loader = new FXMLLoader(App.class.getResource("VistaIngresoPeaton.fxml"));
+                FXMLLoader loader = new FXMLLoader(App.class.getResource("VistasSinCodigoAcceso.fxml"));
                 Parent root = loader.load();
                 panePrincipal.setCenter(root);
-                VistaIngresoPeatonController vistaPea = loader.getController();
+                VistasSinCodigoAccesoController vistaSinCodi = loader.getController();
 
                 
             } catch (IOException ex) {
@@ -66,11 +64,8 @@ public class Simulacion_residentesController implements Initializable {
             } 
         });
         
-      
-            }
-      
+        
         // TODO
-    }   
-
+    }    
     
-
+}
